@@ -1,6 +1,5 @@
 # Gas Town Control Plane
 
-[![CI](https://github.com/SmolNero/gastown-control-plane/actions/workflows/ci.yml/badge.svg)](https://github.com/SmolNero/gastown-control-plane/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/SmolNero/gastown-control-plane)](https://github.com/SmolNero/gastown-control-plane/releases/latest)
 [![License](https://img.shields.io/github/license/SmolNero/gastown-control-plane)](LICENSE)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/SmolNero/gastown-control-plane)](go.mod)
