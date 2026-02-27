@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: gtcp
+      POSTGRES_PASSWORD: gtcp
+      POSTGRES_DB: gtcp
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gtcp -d gtcp"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  api:
+    image: gtcp
+    build: .
+    environment:
+      GTCP_DATABASE_URL: postgres://gtcp:gtcp@postgres:5432/gtcp?sslmode=disable
+      GTCP_AUTO_MIGRATE: "true"
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://localhost:8080/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+  agent:
+    image: gtcp
+    build: .
+    profiles: ["agent"]
+    depends_on:
+      api:
+        condition: service_healthy
+    environment:
+      GTCP_API_URL: http://api:8080
+      GTCP_API_KEY: ${GTCP_API_KEY}
+      GTCP_WORKSPACE: /workspace
+    volumes:
+      - ${GTCP_WORKSPACE_PATH:-$HOME/gt}:/workspace
+    command: ["/usr/local/bin/gt-agent", "run"]
+
+volumes:
+  pgdata:

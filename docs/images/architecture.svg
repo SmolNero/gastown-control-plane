@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <defs>
+    <style>
+      .box { fill: #f7f7f7; stroke: #1f2937; stroke-width: 2; rx: 14; }
+      .title { font-family: Arial, sans-serif; font-size: 16px; fill: #111827; font-weight: 700; }
+      .label { font-family: Arial, sans-serif; font-size: 13px; fill: #374151; }
+      .arrow { stroke: #1f2937; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1f2937" />
+    </marker>
+  </defs>
+
+  <rect class="box" x="40" y="60" width="220" height="90" />
+  <text class="title" x="60" y="90">Gas Town Workspace</text>
+  <text class="label" x="60" y="115">Rigs, agents, hooks</text>
+
+  <rect class="box" x="320" y="60" width="220" height="90" />
+  <text class="title" x="340" y="90">gt-agent</text>
+  <text class="label" x="340" y="115">Events + snapshots</text>
+
+  <rect class="box" x="600" y="40" width="240" height="110" />
+  <text class="title" x="620" y="75">Control Plane API</text>
+  <text class="label" x="620" y="100">Auth, ingest, query</text>
+  <text class="label" x="620" y="120">Rate limits, validation</text>
+
+  <rect class="box" x="600" y="200" width="240" height="90" />
+  <text class="title" x="620" y="230">Postgres</text>
+  <text class="label" x="620" y="255">Events, snapshots,</text>
+  <text class="label" x="620" y="275">workspaces, audit logs</text>
+
+  <rect class="box" x="320" y="220" width="220" height="90" />
+  <text class="title" x="340" y="250">Web Dashboard</text>
+  <text class="label" x="340" y="275">Status + activity</text>
+
+  <line class="arrow" x1="260" y1="105" x2="320" y2="105" />
+  <line class="arrow" x1="540" y1="105" x2="600" y2="105" />
+  <line class="arrow" x1="720" y1="150" x2="720" y2="200" />
+  <line class="arrow" x1="600" y1="235" x2="540" y2="235" />
+  <line class="arrow" x1="540" y1="235" x2="540" y2="105" />
+</svg>

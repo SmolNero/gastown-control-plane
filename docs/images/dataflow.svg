@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320">
+  <defs>
+    <style>
+      .box { fill: #f8fafc; stroke: #0f172a; stroke-width: 2; rx: 14; }
+      .title { font-family: Arial, sans-serif; font-size: 16px; fill: #0f172a; font-weight: 700; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #334155; }
+      .arrow { stroke: #0f172a; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a" />
+    </marker>
+  </defs>
+
+  <rect class="box" x="50" y="60" width="230" height="80" />
+  <text class="title" x="70" y="90">Events</text>
+  <text class="label" x="70" y="115">heartbeat, status, notes</text>
+
+  <rect class="box" x="50" y="180" width="230" height="80" />
+  <text class="title" x="70" y="210">Snapshots</text>
+  <text class="label" x="70" y="235">rigs, agents, hooks</text>
+
+  <rect class="box" x="340" y="120" width="220" height="80" />
+  <text class="title" x="360" y="150">Ingest API</text>
+  <text class="label" x="360" y="175">validate + persist</text>
+
+  <rect class="box" x="620" y="60" width="230" height="80" />
+  <text class="title" x="640" y="90">Query API</text>
+  <text class="label" x="640" y="115">rigs, agents, activity</text>
+
+  <rect class="box" x="620" y="180" width="230" height="80" />
+  <text class="title" x="640" y="210">Alerts</text>
+  <text class="label" x="640" y="235">stale agent detection</text>
+
+  <line class="arrow" x1="280" y1="100" x2="340" y2="140" />
+  <line class="arrow" x1="280" y1="220" x2="340" y2="180" />
+  <line class="arrow" x1="560" y1="160" x2="620" y2="100" />
+  <line class="arrow" x1="560" y1="160" x2="620" y2="220" />
+</svg>

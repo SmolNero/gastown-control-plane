@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gas Town Control Plane</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+    <header class="top">
+      <div>
+        <p class="eyebrow">Gas Town</p>
+        <h1>Control Plane</h1>
+        <p class="sub">
+          A realtime snapshot of rigs, agents, convoys, and hooks.
+        </p>
+      </div>
+      <div class="status">
+        <span id="connection-dot"></span>
+        <span id="connection-text">Waiting for data</span>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="card">
+        <p>Rigs</p>
+        <h2 id="rig-count">0</h2>
+      </div>
+      <div class="card">
+        <p>Agents</p>
+        <h2 id="agent-count">0</h2>
+      </div>
+      <div class="card">
+        <p>Convoys</p>
+        <h2 id="convoy-count">0</h2>
+      </div>
+      <div class="card">
+        <p>Hooks</p>
+        <h2 id="hook-count">0</h2>
+      </div>
+      <div class="card alert">
+        <p>Alerts</p>
+        <h2 id="alert-count">0</h2>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <div class="panel-header">
+          <h3>Rigs</h3>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Path</th></tr>
+          </thead>
+          <tbody id="rigs-table"></tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <div class="panel-header">
+          <h3>Agents</h3>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Rig</th><th>Status</th><th>Last Seen</th></tr>
+          </thead>
+          <tbody id="agents-table"></tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <div class="panel-header">
+          <h3>Convoys</h3>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Rig</th><th>Status</th></tr>
+          </thead>
+          <tbody id="convoys-table"></tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <div class="panel-header">
+          <h3>Hooks</h3>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Rig</th><th>Status</th></tr>
+          </thead>
+          <tbody id="hooks-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel activity">
+      <div class="panel-header">
+        <h3>Recent Activity</h3>
+        <button id="refresh">Refresh</button>
+      </div>
+      <div id="activity"></div>
+    </section>
+
+    <div class="modal" id="auth-modal">
+      <div class="modal-card">
+        <h3>Connect Workspace</h3>
+        <p>Paste the API key for this workspace.</p>
+        <input id="api-key-input" placeholder="api key" />
+        <button id="save-key">Save key</button>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
