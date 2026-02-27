@@ -1,9 +1,5 @@
 # Gas Town Control Plane
 
-[![Release](https://img.shields.io/github/v/release/SmolNero/gastown-control-plane)](https://github.com/SmolNero/gastown-control-plane/releases/latest)
-[![License](https://img.shields.io/github/license/SmolNero/gastown-control-plane)](LICENSE)
-[![Go Version](https://img.shields.io/github/go-mod/go-version/SmolNero/gastown-control-plane)](go.mod)
-
 Hosted control plane for Gas Town workspaces. This service ingests events and snapshots from local rigs, stores them in Postgres, and serves a clean dashboard for operators who want a single view of multi-agent work.
 
 This is an independent project and is not affiliated with the official Gas Town project.
