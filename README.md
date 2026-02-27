@@ -267,4 +267,4 @@ The integration test uses `embedded-postgres` and will download a local Postgres
 
 ## License
 
-MIT
+MIT License
